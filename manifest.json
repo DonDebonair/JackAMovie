@@ -1,0 +1,31 @@
+{
+	"name": "Jack-a-Movie",
+	"version": "0.1",
+	"manifest_version" : 2,
+	"description": "Grab a movie from moviefone.com and pass it to Jack Sparrow's friends",
+	"browser_action": {
+      	"default_title": "Grab a movie!",
+      	"default_icon": {
+			"19": "icons/19.png",
+			"38": "icons/38.png"
+		}
+  	},
+  	"background": {
+	    "scripts": [
+	    	"lib/URI.js",
+	      	"scripts/background.js"
+	    ]
+  	},
+	"content_scripts": [
+	{
+		"matches": ["http://*/*"],
+		"js": ["lib/jquery-1.9.1.min.js", "scripts/content_script.js"],
+		"run_at": "document_idle"
+	}
+	],
+	"icons": {
+		"16": "icons/16.png",
+		"48": "icons/48.png",
+		"128": "icons/128.png"
+	}
+}
