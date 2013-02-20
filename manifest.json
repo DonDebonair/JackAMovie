@@ -8,11 +8,13 @@
       	"default_icon": {
 			"19": "icons/19.png",
 			"38": "icons/38.png"
-		}
+		},
+		"default_popup": "popup.html"
   	},
   	"background": {
 	    "scripts": [
 	    	"lib/URI.js",
+	    	"lib/jquery-1.9.1.min.js",
 	      	"scripts/background.js"
 	    ]
   	},
@@ -27,5 +29,9 @@
 		"16": "icons/16.png",
 		"48": "icons/48.png",
 		"128": "icons/128.png"
-	}
+	},
+	"permissions": [
+	    "tabs",
+	    "http://apify.ifc0nfig.com/"
+  	]
 }

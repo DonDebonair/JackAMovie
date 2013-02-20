@@ -4,7 +4,8 @@ function stripHtml(str) {
 
 chrome.extension.onMessage.addListener(
 	function(request, sender, sendResponse) {
-		var movietitle = $('.movie-title h1').html();
+		console.log(request.selector);
+		var movietitle = $(request.selector).html();
 		console.log(stripHtml(movietitle));
 		sendResponse({title: stripHtml(movietitle)});
 	});
