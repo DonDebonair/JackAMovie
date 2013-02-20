@@ -1,6 +1,6 @@
 {
 	"name": "Jack-a-Movie",
-	"version": "0.1",
+	"version": "0.5",
 	"manifest_version" : 2,
 	"description": "Grab a movie from moviefone.com and pass it to Jack Sparrow's friends",
 	"browser_action": {
