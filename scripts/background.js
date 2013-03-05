@@ -16,7 +16,7 @@ var movie_sites = 	[
 function getProxy() {
 	var proxy = localStorage["proxy"];
 	if(!proxy) {
-		return 'piratereverse.info';
+		return 'https://piratereverse.info/';
 	} else {
 		return proxy;
 	}
