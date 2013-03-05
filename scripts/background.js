@@ -13,6 +13,15 @@ var movie_sites = 	[
 						}
 					];
 
+function getProxy() {
+	var proxy = localStorage["proxy"];
+	if(!proxy) {
+		return 'piratereverse.info';
+	} else {
+		return proxy;
+	}
+}
+
 function endsWith(str, suffix) {
     return str.indexOf(suffix, str.length - suffix.length) !== -1;
 }
@@ -30,7 +39,7 @@ function openMovie(tab) {
 	for ( var i = 0 ; i < movie_sites.length; i++) {
 		if(endsWith(uri.hostname(), movie_sites[i].url) && uri.segment(0) == movie_sites[i].segment) {
 			chrome.tabs.sendMessage(tab.id, {selector: movie_sites[i].title_selector}, function(response) {
-				var pirate_uri = new URITemplate('https://piratereverse.info/search/{title}/0/7/0');
+				var pirate_uri = new URITemplate(getProxy() + 'search/{title}/0/7/0');
 				chrome.tabs.create({
 					url: pirate_uri.expand({title: response.title})
 				});
@@ -40,7 +49,7 @@ function openMovie(tab) {
 			break;
 		}
 	}
-	if(found_site = false) {
+	if(found_site == false) {
 		alert('Sorry, no movie detected...');
 	}
 }
@@ -74,7 +83,7 @@ function downloadMovie(tab) {
 			break;
 		}
 	}
-	if(found_site = false) {
+	if(found_site == false) {
 		alert('Sorry, no movie detected...');
 	}
 }

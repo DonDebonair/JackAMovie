@@ -1,0 +1,46 @@
+<html>
+<head>
+	<title>JackAMovie Options</title>
+	<link rel="stylesheet" type="text/css" href="chrome-bootstrap.css">
+</head>
+
+<body class="frame">
+<div class="mainview view">
+<div class="selected">
+<header>
+	<h1>JacoAMovie Options</h1>
+</header>
+<div class="content">
+<h3>Piratebay Proxy</h3>
+<p>Select which proxy you want this extension to use, or provide your own</p>
+<section>
+	<div class="radio">
+	  <label for="piratereverse">
+	    <input id="piratereverse" name="proxy" value="https://piratereverse.info/" type="radio">
+	    <span>Piratereverse</span>
+	  </label>
+	</div>
+	<div class="radio">
+	  <label for="hiddese">
+	    <input id="hiddese" name="proxy"  value="http://tpb.hidde.se/" type="radio">
+	    <span>tpb.hidde.se</span>
+	  </label>
+	</div>
+	<div class="radio">
+	  <label for="own">
+	    <input id="own" name="proxy"  value="own" type="radio">
+	    <span>Other</span>
+	    <input id="owntext" name="owntext" type="text">
+	  </label>
+	</div>
+</section>
+<div id="status"></div>
+<button id="save">Save</button>
+</div>
+</div>
+</div>
+</body>
+<script src="lib/jquery-1.9.1.min.js"></script>
+<script src="options.js"></script>
+
+</html>
